@@ -1,0 +1,9 @@
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.Properties.Resources.resources
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.csproj.GenerateResource.cache
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\TestTest\TestTest\bin\Debug\TestTest.exe.config
+C:\Users\krist\source\repos\TestTest\TestTest\bin\Debug\TestTest.exe
+C:\Users\krist\source\repos\TestTest\TestTest\bin\Debug\TestTest.pdb
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.exe
+C:\Users\krist\source\repos\TestTest\TestTest\obj\Debug\TestTest.pdb
