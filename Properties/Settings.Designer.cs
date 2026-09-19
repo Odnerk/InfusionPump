@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestTest.Properties
+namespace InfusionPumpV1.Properties
 {
 
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestTest")]
+[assembly: AssemblyTitle("InfusionPumpV1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TestTest")]
+[assembly: AssemblyProduct("InfusionPumpV1")]
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cf2ef0d5-44c3-4bce-8823-0cf806fee1ff")]
+[assembly: Guid("26aad093-5c79-49bd-9bab-c8e1c7cdf22a")]
 
 // Version information for an assembly consists of the following four values:
 //
