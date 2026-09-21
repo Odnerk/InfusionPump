@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,11 +31,11 @@ namespace InfusionPumpV1
         {
             dgvRules.Rows.Add("1", "IF HR Low AND BP Low THEN Decrease", "0.00");
             dgvRules.Rows.Add("2", "IF HR Low AND BP Normal THEN Decrease", "0.00");
-            dgvRules.Rows.Add("3", "IF HR Normal AND BP Low THEN Maintain", "0.00");
-            dgvRules.Rows.Add("4", "IF HR Low AND BP High THEN Decrease", "0.00");
+            dgvRules.Rows.Add("3", "IF HR Normal AND BP Low THEN Decrease", "0.00");
+            dgvRules.Rows.Add("4", "IF HR Low AND BP High THEN Maintain", "0.00");
             dgvRules.Rows.Add("5", "IF HR Normal AND BP Normal THEN Maintain", "0.00");
-            dgvRules.Rows.Add("6", "IF HR High AND BP Low THEN Increase", "0.00");
-            dgvRules.Rows.Add("7", "IF HR Normal AND BP High THEN Maintain", "0.00");
+            dgvRules.Rows.Add("6", "IF HR High AND BP Low THEN Maintain", "0.00");
+            dgvRules.Rows.Add("7", "IF HR Normal AND BP High THEN Increase", "0.00");
             dgvRules.Rows.Add("8", "IF HR High AND BP Normal THEN Increase", "0.00");
             dgvRules.Rows.Add("9", "IF HR High AND BP High THEN Increase", "0.00");
         }
@@ -82,9 +82,9 @@ namespace InfusionPumpV1
             UpdateGridRow(8, rule9);
 
             // Aggregate strengths for each output category
-            double strengthDecrease = Math.Max(rule1, Math.Max(rule2, rule4));
-            double strengthMaintain = Math.Max(rule3, Math.Max(rule5, rule7));
-            double strengthIncrease = Math.Max(rule6, Math.Max(rule8, rule9));
+            double strengthDecrease = Math.Max(rule1, Math.Max(rule2, rule3));
+            double strengthMaintain = Math.Max(rule4, Math.Max(rule5, rule6));
+            double strengthIncrease = Math.Max(rule7, Math.Max(rule8, rule9));
 
             label4.Text = $"Decrease: {strengthDecrease:F2}";
             label5.Text = $"Maintain: {strengthMaintain:F2}";
@@ -148,7 +148,7 @@ namespace InfusionPumpV1
 
         static double TrapezoidalMembership(double x, double a, double b, double c, double d)
         {
-            if (x <= a || x >= d) return 0.0;
+            if (x < a || x > d) return 0.0;
             if (x >= b && x <= c) return 1.0;
             if (x > a && x < b) return (x - a) / (b - a);
             return (d - x) / (d - c);
@@ -234,9 +234,6 @@ namespace InfusionPumpV1
             SetSliders(140, 160);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
