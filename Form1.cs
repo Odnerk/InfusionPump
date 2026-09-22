@@ -16,12 +16,23 @@ namespace InfusionPumpV1
         double heartRate = 40.0;
         double bloodPressure = 60.0;
 
+        private Surface3DControl surface3DControl;
+
         public Form1()
         {
             InitializeComponent();
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+
+            surface3DControl = new Surface3DControl();
+            surface3DControl.Dock = DockStyle.Fill;
+            surface3DControl.OnSurfaceClicked += (hr, bp) => SetSliders(hr, bp);
+
+            TabPage tabPage3D = new TabPage("4. 3D Control Surface");
+            tabPage3D.Controls.Add(surface3DControl);
+
+            this.tabControl1.TabPages.Add(tabPage3D);
 
             InitializeRulesGrid();
             calculateFuzzyLogic();
@@ -128,6 +139,14 @@ namespace InfusionPumpV1
             pbPumpRate.Membership = new MembershipTriple(strengthDecrease, strengthMaintain, strengthIncrease);
             pbPumpRate.CurrentValue = crispOutput;
             pbPumpRate.Invalidate();
+
+            if (surface3DControl != null)
+            {
+                surface3DControl.CurrentHR = heartRate;
+                surface3DControl.CurrentBP = bloodPressure;
+                surface3DControl.CurrentPumpRate = crispOutput;
+                surface3DControl.Invalidate();
+            }
         }
 
         private void UpdateGridRow(int rowIndex, double strength)
@@ -244,6 +263,10 @@ namespace InfusionPumpV1
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
         }
     }
